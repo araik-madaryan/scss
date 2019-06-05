@@ -1,0 +1,41 @@
+@mixin Anneau ($size, $color){
+  height: $size;
+  width: $size;
+  border: 4px solid $color;
+  border-radius: $size;
+  box-shadow: 2px 2px 5px $color, inset 2px 2px 5px $color;
+  color: $color;
+}
+
+.Anneau_1 {
+  @include Anneau(40px, orange)
+}
+
+.conteneur_1 {
+  display: flex;
+  width: 250px;
+  margin: 0 auto;
+}
+
+
+.Anneau_2 {
+  @include Anneau (90px, gold)
+}
+
+.conteneur_2 {
+  display:flex;
+  width:250px;
+  margin: 0 auto;
+}
+
+
+@for $i from 1 through 6 {
+  .Anneau_n#{$i} {
+    @include Anneau(10px*$i, gold);
+    margin-left:-4px*$i;
+  }
+}
+
+.conteneur_3 {
+  display: flex;
+}
